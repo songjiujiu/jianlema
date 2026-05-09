@@ -1,0 +1,96 @@
+.profile-head {
+  padding-bottom: 122rpx;
+}
+
+.profile-head .tag {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.profile-card,
+.reminder-card {
+  box-shadow: 0 14rpx 36rpx rgba(13, 27, 30, 0.07);
+}
+
+.first-field {
+  margin-top: 0;
+}
+
+.mode-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14rpx;
+  margin-top: 18rpx;
+}
+
+.mode-card {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  padding: 24rpx;
+  border: 2rpx solid #e0e7e1;
+  border-radius: 8rpx;
+  background: #ffffff;
+}
+
+.mode-card.active {
+  border-color: #1f4e5f;
+  background: #edf7f4;
+}
+
+.mode-indicator {
+  flex: 0 0 auto;
+  width: 22rpx;
+  height: 82rpx;
+  border-radius: 8rpx;
+  background: #d7e0d9;
+}
+
+.mode-card.active .mode-indicator {
+  background: #0f7c66;
+}
+
+.mode-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.mode-name {
+  display: block;
+  color: #162022;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.mode-desc {
+  display: block;
+  margin-top: 10rpx;
+  color: #6f7d79;
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.setting-title {
+  display: block;
+  color: #162022;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.setting-desc {
+  display: block;
+  margin-top: 10rpx;
+  color: #6f7d79;
+  font-size: 24rpx;
+}
+
+.action-row {
+  padding-bottom: 10rpx;
+}

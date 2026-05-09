@@ -1,0 +1,46 @@
+<view class="page checkin-page">
+  <view class="screen-head checkin-head">
+    <view class="title-row">
+      <view>
+        <text class="eyebrow">{{isMakeup ? '补打卡' : '今日打卡'}}</text>
+        <view class="h1">{{displayDate}}</view>
+      </view>
+      <text class="tag {{isMakeup ? 'tag-warn' : ''}}">{{isMakeup ? '补' : '今'}}</text>
+    </view>
+  </view>
+
+  <view class="screen-body">
+    <view class="photo-box" bindtap="choosePhoto">
+      <image wx:if="{{imagePath}}" class="photo-preview" src="{{imagePath}}" mode="aspectFill"></image>
+      <view wx:else class="photo-empty">
+        <view class="lens-ring">
+          <text class="lens-plus">+</text>
+        </view>
+        <text class="photo-title">拍照打卡</text>
+        <text class="photo-sub">相机 / 相册</text>
+      </view>
+    </view>
+
+    <view class="card section form-card">
+      <view class="grid-2">
+        <view class="field compact-field">
+          <text class="label">体重 kg</text>
+          <input class="input" type="digit" value="{{weight}}" data-field="weight" bindinput="onInput" placeholder="可选" />
+        </view>
+        <view class="field compact-field">
+          <text class="label">状态</text>
+          <view class="mood-row">
+            <text wx:for="{{moods}}" wx:key="value" data-value="{{item.value}}" bindtap="selectMood" class="mood {{item.active ? 'active' : ''}}">{{item.label}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="field">
+        <text class="label">备注</text>
+        <textarea class="textarea" value="{{note}}" data-field="note" bindinput="onInput" placeholder="今天的饮食、训练或状态" maxlength="120" />
+      </view>
+    </view>
+
+    <button class="primary-btn submit-btn" bindtap="submitCheckin">提交打卡</button>
+  </view>
+</view>

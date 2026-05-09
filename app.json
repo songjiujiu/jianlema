@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/checkin/checkin",
+    "pages/progress/progress",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarTitleText": "减了嘛",
+    "navigationBarBackgroundColor": "#0d1b1e",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f3f6f2"
+  },
+  "tabBar": {
+    "color": "#7a8682",
+    "selectedColor": "#0f7c66",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "今日"
+      },
+      {
+        "pagePath": "pages/progress/progress",
+        "text": "进度"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

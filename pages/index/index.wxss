@@ -1,0 +1,225 @@
+.index-head {
+  padding-bottom: 118rpx;
+}
+
+.mode-pill {
+  flex: 0 0 auto;
+  min-width: 116rpx;
+  height: 54rpx;
+  padding: 0 18rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.18);
+  border-radius: 8rpx;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 23rpx;
+  font-weight: 900;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.checkin-panel {
+  position: relative;
+  padding: 34rpx;
+  border-radius: 8rpx;
+  color: #ffffff;
+  box-shadow: 0 22rpx 54rpx rgba(13, 27, 30, 0.18);
+  overflow: hidden;
+}
+
+.checkin-panel::after {
+  position: absolute;
+  right: -48rpx;
+  top: -76rpx;
+  width: 210rpx;
+  height: 210rpx;
+  border: 24rpx solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  content: "";
+}
+
+.checkin-panel.is-open {
+  background: #1f4e5f;
+}
+
+.checkin-panel.is-done {
+  background: #0f7c66;
+}
+
+.panel-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+}
+
+.status-chip {
+  min-height: 44rpx;
+  padding: 0 18rpx;
+  border-radius: 8rpx;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 22rpx;
+  font-weight: 900;
+  line-height: 44rpx;
+}
+
+.status-chip.open {
+  background: #ffcf5a;
+  color: #172024;
+}
+
+.streak-text {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.panel-title {
+  position: relative;
+  z-index: 1;
+  margin-top: 34rpx;
+  font-size: 56rpx;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.panel-copy {
+  position: relative;
+  z-index: 1;
+  min-height: 96rpx;
+  margin: 16rpx 0 30rpx;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 28rpx;
+  line-height: 1.62;
+}
+
+.hero-btn {
+  position: relative;
+  z-index: 1;
+  background: #ffcf5a;
+  color: #172024;
+}
+
+.metric-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14rpx;
+  margin-top: 18rpx;
+}
+
+.metric {
+  min-height: 134rpx;
+  padding: 24rpx 10rpx;
+  border: 2rpx solid #e0e7e1;
+  border-radius: 8rpx;
+  background: #ffffff;
+  box-shadow: 0 10rpx 28rpx rgba(13, 27, 30, 0.05);
+  text-align: center;
+}
+
+.metric-value {
+  display: block;
+  color: #162022;
+  font-size: 34rpx;
+  font-weight: 900;
+}
+
+.metric-label {
+  display: block;
+  margin-top: 12rpx;
+  color: #6f7d79;
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.simple-section {
+  padding: 28rpx;
+  border: 2rpx solid #e0e7e1;
+  border-radius: 8rpx;
+  background: #ffffff;
+}
+
+.week-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10rpx;
+  margin-top: 22rpx;
+}
+
+.week-day {
+  height: 104rpx;
+  border: 2rpx solid #e0e7e1;
+  border-radius: 8rpx;
+  background: #f8faf7;
+  color: #7a8682;
+  font-size: 24rpx;
+  text-align: center;
+  padding-top: 16rpx;
+}
+
+.week-day.today {
+  border-color: #1f4e5f;
+}
+
+.week-day.checked {
+  background: #e8f5f1;
+  border-color: #96cbbb;
+  color: #0f7c66;
+  font-weight: 900;
+}
+
+.week-num {
+  display: block;
+  line-height: 34rpx;
+}
+
+.week-dot {
+  width: 14rpx;
+  height: 14rpx;
+  margin: 16rpx auto 0;
+  border-radius: 50%;
+  background: #cfd8d2;
+}
+
+.week-day.checked .week-dot {
+  background: #0f7c66;
+}
+
+.latest-card {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 22rpx;
+}
+
+.latest-image {
+  flex: 0 0 auto;
+  width: 176rpx;
+  height: 176rpx;
+  border-radius: 8rpx;
+  background: #e0e7e1;
+}
+
+.latest-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14rpx;
+}
+
+.latest-title {
+  color: #162022;
+  font-size: 34rpx;
+  font-weight: 900;
+}
+
+.latest-note {
+  display: -webkit-box;
+  overflow: hidden;
+  line-height: 1.5;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

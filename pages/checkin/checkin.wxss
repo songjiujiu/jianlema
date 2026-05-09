@@ -1,0 +1,106 @@
+.checkin-head {
+  padding-bottom: 128rpx;
+}
+
+.checkin-head .tag {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.checkin-head .tag-warn {
+  background: #ffcf5a;
+  color: #172024;
+}
+
+.photo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 680rpx;
+  border: 2rpx solid #e0e7e1;
+  border-radius: 8rpx;
+  background: #ffffff;
+  box-shadow: 0 18rpx 42rpx rgba(13, 27, 30, 0.1);
+  overflow: hidden;
+}
+
+.photo-preview {
+  width: 100%;
+  height: 100%;
+}
+
+.photo-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14rpx;
+  color: #6f7d79;
+}
+
+.lens-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132rpx;
+  height: 132rpx;
+  border: 4rpx solid #0f7c66;
+  border-radius: 50%;
+  background: #e8f5f1;
+}
+
+.lens-plus {
+  color: #0f7c66;
+  font-size: 72rpx;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.photo-title {
+  color: #162022;
+  font-size: 32rpx;
+  font-weight: 900;
+}
+
+.photo-sub {
+  color: #7a8682;
+  font-size: 24rpx;
+}
+
+.form-card {
+  box-shadow: none;
+}
+
+.compact-field {
+  margin-top: 0;
+}
+
+.mood-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10rpx;
+}
+
+.mood {
+  min-height: 86rpx;
+  border: 2rpx solid #d7e0d9;
+  border-radius: 8rpx;
+  background: #fbfdfb;
+  color: #6f7d79;
+  font-size: 24rpx;
+  font-weight: 800;
+  line-height: 82rpx;
+  text-align: center;
+}
+
+.mood.active {
+  border-color: #0f7c66;
+  background: #e8f5f1;
+  color: #0f7c66;
+}
+
+.submit-btn {
+  margin-top: 28rpx;
+  min-height: 96rpx;
+}

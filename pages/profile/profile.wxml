@@ -1,0 +1,81 @@
+<view class="page profile-page">
+  <view class="screen-head profile-head">
+    <view class="title-row">
+      <view>
+        <text class="eyebrow">我的</text>
+        <view class="h1">设置目标</view>
+      </view>
+      <text class="tag">{{modeLabel}}</text>
+    </view>
+  </view>
+
+  <view class="screen-body">
+    <view class="card profile-card">
+      <view class="field first-field">
+        <text class="label">昵称</text>
+        <input class="input" value="{{profile.nickname}}" data-field="nickname" bindinput="onProfileInput" />
+      </view>
+      <view class="grid-2">
+        <view class="field">
+          <text class="label">身高 cm</text>
+          <input class="input" type="digit" value="{{profile.height}}" data-field="height" bindinput="onProfileInput" placeholder="可选" />
+        </view>
+        <view class="field">
+          <text class="label">当前 kg</text>
+          <input class="input" type="digit" value="{{profile.currentWeight}}" data-field="currentWeight" bindinput="onProfileInput" placeholder="可选" />
+        </view>
+      </view>
+      <view class="grid-2">
+        <view class="field">
+          <text class="label">初始 kg</text>
+          <input class="input" type="digit" value="{{profile.startWeight}}" data-field="startWeight" bindinput="onProfileInput" placeholder="可选" />
+        </view>
+        <view class="field">
+          <text class="label">目标 kg</text>
+          <input class="input" type="digit" value="{{profile.targetWeight}}" data-field="targetWeight" bindinput="onProfileInput" placeholder="可选" />
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="title-row">
+        <text class="h2">提醒强度</text>
+        <text class="tiny">当前 {{modeLabel}}</text>
+      </view>
+      <view class="mode-list">
+        <view wx:for="{{modes}}" wx:key="value" class="mode-card {{item.active ? 'active' : ''}}" data-mode="{{item.value}}" bindtap="selectMode">
+          <view class="mode-indicator"></view>
+          <view class="mode-content">
+            <text class="mode-name">{{item.name}}</text>
+            <text class="mode-desc">{{item.desc}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card section reminder-card">
+      <view class="setting-row">
+        <view>
+          <text class="setting-title">漏打卡弹窗</text>
+          <text class="setting-desc">未完成时提醒</text>
+        </view>
+        <switch checked="{{profile.reminderPopupEnabled}}" bindchange="onPopupSwitch" color="#0f7c66" />
+      </view>
+      <view class="grid-2">
+        <view class="field">
+          <text class="label">提醒时间</text>
+          <input class="input" value="{{profile.reminderTime}}" data-field="reminderTime" bindinput="onProfileInput" placeholder="20:30" />
+        </view>
+        <view class="field">
+          <text class="label">截止时间</text>
+          <input class="input" value="{{profile.checkinDeadline}}" data-field="checkinDeadline" bindinput="onProfileInput" placeholder="21:30" />
+        </view>
+      </view>
+    </view>
+
+    <view class="section grid-2 action-row">
+      <button class="primary-btn" bindtap="saveSettings">保存设置</button>
+      <button class="secondary-btn" bindtap="clearData">清空数据</button>
+    </view>
+  </view>
+</view>

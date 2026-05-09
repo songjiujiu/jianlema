@@ -1,0 +1,72 @@
+<view class="page progress-page">
+  <view class="screen-head progress-head">
+    <view class="title-row">
+      <view>
+        <text class="eyebrow">进度</text>
+        <view class="h1">证据都在这</view>
+      </view>
+      <text class="tag">共 {{checkins.length}} 次</text>
+    </view>
+  </view>
+
+  <view class="screen-body">
+    <view class="calendar-card">
+      <view class="calendar-head">
+        <button class="month-btn" bindtap="prevMonth">‹</button>
+        <text class="h2">{{monthTitle}}</text>
+        <button class="month-btn" bindtap="nextMonth">›</button>
+      </view>
+
+      <view class="calendar">
+        <text wx:for="{{weekdays}}" wx:key="*this" class="weekday">{{item}}</text>
+        <view wx:for="{{monthDays}}" wx:key="date" class="{{item.className}}" data-date="{{item.date}}" bindtap="openDate">
+          <text>{{item.label}}</text>
+          <text wx:if="{{item.statusText}}" class="day-status">{{item.statusText}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section trend-card" wx:if="{{trendBars.length}}">
+      <view class="title-row">
+        <text class="h2">体重趋势</text>
+        <text class="tag">{{trendText}}</text>
+      </view>
+      <view class="trend">
+        <view wx:for="{{trendBars}}" wx:key="date" class="trend-item">
+          <view class="trend-bar-wrap">
+            <view class="trend-bar" style="height: {{item.height}}rpx;"></view>
+          </view>
+          <text class="trend-weight">{{item.weight}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section" wx:if="{{compareImages.length === 2}}">
+      <view class="title-row">
+        <text class="h2">前后对比</text>
+        <text class="tiny">2 张</text>
+      </view>
+      <view class="compare">
+        <image wx:for="{{compareImages}}" wx:key="id" class="compare-image" src="{{item.imagePath}}" mode="aspectFill"></image>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="title-row">
+        <text class="h2">照片记录</text>
+        <text class="tiny">选择对比</text>
+      </view>
+      <view wx:if="{{checkins.length}}" class="photo-list">
+        <view wx:for="{{checkins}}" wx:key="id" class="photo-item {{item.selected ? 'selected' : ''}}" data-id="{{item.id}}" bindtap="toggleCompare">
+          <image class="photo-thumb" src="{{item.imagePath}}" mode="aspectFill"></image>
+          <view class="photo-meta">
+            <text class="photo-date">{{item.displayDate}}</text>
+            <text class="muted">{{item.summary}}</text>
+          </view>
+          <button class="delete-btn" data-id="{{item.id}}" catchtap="deleteRecord">删除</button>
+        </view>
+      </view>
+      <view wx:else class="empty">还没有打卡记录。</view>
+    </view>
+  </view>
+</view>

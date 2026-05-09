@@ -1,0 +1,69 @@
+<view class="page index-page">
+  <view class="screen-head index-head">
+    <view class="title-row">
+      <view>
+        <text class="eyebrow">{{todayLabel}}</text>
+        <view class="h1">今天减了嘛</view>
+      </view>
+      <view class="mode-pill">{{modeLabel}}</view>
+    </view>
+  </view>
+
+  <view class="screen-body">
+    <view class="checkin-panel {{hasCheckedInToday ? 'is-done' : 'is-open'}}">
+      <view class="panel-meta">
+        <text class="status-chip {{hasCheckedInToday ? 'done' : 'open'}}">{{todayStatus}}</text>
+        <text class="streak-text">连续 {{streakDays}} 天</text>
+      </view>
+      <view class="panel-title">{{hasCheckedInToday ? '今天稳住了' : '今天还空着'}}</view>
+      <view class="panel-copy">{{quote}}</view>
+      <button class="primary-btn hero-btn" bindtap="goCheckin">{{hasCheckedInToday ? '再补一张证据' : '拍照打卡'}}</button>
+    </view>
+
+    <view class="metric-strip">
+      <view class="metric">
+        <text class="metric-value">{{currentWeightText}}</text>
+        <text class="metric-label">当前</text>
+      </view>
+      <view class="metric">
+        <text class="metric-value">{{targetWeightText}}</text>
+        <text class="metric-label">目标</text>
+      </view>
+      <view class="metric">
+        <text class="metric-value">{{totalCheckins}}</text>
+        <text class="metric-label">记录</text>
+      </view>
+    </view>
+
+    <view class="section simple-section">
+      <view class="title-row">
+        <text class="h2">最近 7 天</text>
+        <text class="tag tag-warn">7 日</text>
+      </view>
+      <view class="week-row">
+        <view wx:for="{{recentDays}}" wx:key="date" class="week-day {{item.checked ? 'checked' : ''}} {{item.isToday ? 'today' : ''}}">
+          <text class="week-num">{{item.label}}</text>
+          <view class="week-dot"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section simple-section" wx:if="{{latestCheckin}}">
+      <view class="title-row">
+        <text class="h2">最近记录</text>
+        <text class="tiny">{{latestCheckinDate}}</text>
+      </view>
+      <view class="latest-card">
+        <image class="latest-image" src="{{latestCheckin.imagePath}}" mode="aspectFill"></image>
+        <view class="latest-info">
+          <text class="latest-title">{{latestCheckin.weightText}}</text>
+          <text class="muted latest-note">{{latestCheckin.noteText}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty section" wx:else>
+      还没有照片记录。今天先拍第一张。
+    </view>
+  </view>
+</view>
