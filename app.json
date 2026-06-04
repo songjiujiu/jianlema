@@ -6,7 +6,7 @@
     "pages/profile/profile"
   ],
   "window": {
-    "navigationBarTitleText": "减了嘛",
+    "navigationBarTitleText": "小目标体重记录",
     "navigationBarBackgroundColor": "#0d1b1e",
     "navigationBarTextStyle": "white",
     "backgroundColor": "#f3f6f2"
